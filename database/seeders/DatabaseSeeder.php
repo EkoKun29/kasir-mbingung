@@ -29,10 +29,10 @@ class DatabaseSeeder extends Seeder
         * Make Role 
         */
 
-        $admin_role = Role::create(['name' => 'admin']);
-        $qc_role    = Role::create(['name' => 'qc']);
-        $op_role    = Role::create(['name' => 'operator']);
-        $audit_role = Role::create(['name' => 'audit']);
+        // $admin_role = Role::create(['name' => 'admin']);
+        // $qc_role    = Role::create(['name' => 'qc']);
+        // $op_role    = Role::create(['name' => 'operator']);
+        // $audit_role = Role::create(['name' => 'audit']);
 
         /*
         * Make User and assign to role
@@ -66,9 +66,9 @@ class DatabaseSeeder extends Seeder
             'id_role' => '3',
         ]);
 
-        $admin->assignRole($admin_role);
-        $qc->assignRole($qc_role);
-        $op->assignRole($op_role);
-        $audit->assignRole($audit_role);
+        // $admin->assignRole($admin_role);
+        // $qc->assignRole($qc_role);
+        // $op->assignRole($op_role);
+        // $audit->assignRole($audit_role);
     }
 }
