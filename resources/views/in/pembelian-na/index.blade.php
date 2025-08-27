@@ -53,8 +53,15 @@
                     name: 'no_nota'
                 },
                 {
-                    data: 'tanggal',
-                    name: 'tanggal'
+                    data: 'created_at',
+                    name: 'created_at',
+                    render: function (data) {
+                        if (!data) return '';
+                        let datePart = data.split(' ')[0]; // ambil tanggalnya saja
+                        let tgl = datePart.split('-').reverse().join('/');
+                        return tgl;
+                    }
+
                 },
                 {
                     data: 'atas_nama_sales',
@@ -130,7 +137,7 @@
                 $('#editModal').modal();
                 $('#editForm').attr('action', `pembelian-na/update/${_id}`);
                 $('input[name="no_nota"]').val(data.data.no_nota);
-                $('input[name="tanggal"]').val(data.data.tanggal);
+                $('input[name="created_at"]').val(data.data.created_at);
                 $('input[name="nama_suplier"]').val(data.data.nama_suplier);
                 $('input[name="no_lot"]').val(data.data.no_lot);
                 $('input[name="harga"]').val(data.data.harga);
