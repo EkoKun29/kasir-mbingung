@@ -56,11 +56,12 @@
                     name: 'created_at',
                     render: function (data) {
                         if (!data) return '';
-                        let datePart = data.split(' ')[0]; // ambil tanggalnya saja
+                        // Ambil bagian tanggal sebelum huruf T
+                        let datePart = data.split('T')[0]; // hasil: 2025-08-27
+                        // Format ke dd/mm/yyyy
                         let tgl = datePart.split('-').reverse().join('/');
                         return tgl;
                     }
-
                 },
                 {
                     data: 'atas_nama_sales',
