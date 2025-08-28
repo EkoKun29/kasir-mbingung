@@ -34,6 +34,14 @@
 @stop
 @push('js')
     <script>
+        new TomSelect("#select-supplier", {
+            create: false,
+        });
+        new TomSelect("#select-barang", {
+            create: false,
+        });
+    </script>
+    <script>
         // MENAMPILKAN TABLE
         $table_data = $('#tbl_pembelian_na_tf').DataTable({
             processing: true,
